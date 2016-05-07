@@ -20,9 +20,10 @@ import (
 // the Query (using a trigram index) before running the comparatively
 // more expensive regexp machinery.
 type Query struct {
-	Op      QueryOp
-	Trigram []string
-	Sub     []*Query
+	Satisfied int
+	Op        QueryOp
+	Trigram   []string
+	Sub       []*Query
 }
 
 type QueryOp int
